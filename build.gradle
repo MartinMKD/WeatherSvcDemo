@@ -1,6 +1,15 @@
 plugins {
-    id "org.gretty" version "4.0.1"
     id 'java'
+    id "application"
+}
+
+apply plugin : "java"
+ext {
+    javaMainClass = "com.banno.weatherservice.WeatherServiceMain"
+}
+
+application {
+    mainClassName = javaMainClass
 }
 
 group 'com.banno'
@@ -25,6 +34,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-apply plugin: 'war'
-apply from: 'https://raw.github.com/gretty-gradle-plugin/gretty/master/pluginScripts/gretty.plugin'

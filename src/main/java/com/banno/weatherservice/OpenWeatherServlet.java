@@ -4,8 +4,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.Iterator;
 
 public class OpenWeatherServlet extends HttpServlet
@@ -52,21 +55,25 @@ public class OpenWeatherServlet extends HttpServlet
             response.getWriter().println("<h3>Current conditions:</h3> <p>"
                     + currTemp + " <span>&#8451;</span> (feels " + tempLabel(currTemp) + "), ");
 
-            if (currWeather.get("current").get("weather").isArray()) {
+            if (currWeather.get("current").get("weather") != null &&
+                    currWeather.get("current").get("weather").isArray()) {
                 Iterator<JsonNode> iter = currWeather.get("current").get("weather").iterator();
                 while (iter.hasNext()) {
                     final JsonNode objNode = iter.next();
                     String desc = objNode.get("description").asText();
-                    response.getWriter().print(desc);
+                    if (desc != null) {
+                        response.getWriter().print(desc);
+                    }
                     if (iter.hasNext()) {
                         response.getWriter().print(",");
                     }
                 }
             }
 
-            response.getWriter().println("</p><h3>Alerts:</h3>");
+            if (currWeather.get("alerts") != null &&
+                    currWeather.get("alerts").isArray()) {
+                response.getWriter().println("</p><h3>Alerts:</h3>");
 
-            if (currWeather.get("alerts").isArray()) {
                 for (final JsonNode objNode : currWeather.get("alerts")) {
                     String desc = objNode.get("description").asText();
                     desc = desc.replaceAll("\\n", "<br>");
@@ -75,7 +82,7 @@ public class OpenWeatherServlet extends HttpServlet
             }
 
         } catch (Exception e) {
-            response.getWriter().println(e.getMessage());
+            response.getWriter().println(ExceptionUtils.getStackTrace(e));
         }
     }
 }
