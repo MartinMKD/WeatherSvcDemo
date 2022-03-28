@@ -61,9 +61,7 @@ public class OpenWeatherServlet extends HttpServlet
                 while (iter.hasNext()) {
                     final JsonNode objNode = iter.next();
                     String desc = objNode.get("description").asText();
-                    if (desc != null) {
-                        response.getWriter().print(desc);
-                    }
+                    response.getWriter().print(desc);
                     if (iter.hasNext()) {
                         response.getWriter().print(",");
                     }
