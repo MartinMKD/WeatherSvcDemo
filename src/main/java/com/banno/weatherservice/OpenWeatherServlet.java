@@ -49,7 +49,7 @@ public class OpenWeatherServlet extends HttpServlet
             JsonNode currWeather = weatherCli.oneCall(lat, lon);
             double currTemp = currWeather.get("current").get("temp").asDouble();
 
-            response.getWriter().println("Current conditions: <p>"
+            response.getWriter().println("<h3>Current conditions:</h3> <p>"
                     + currTemp + " <span>&#8451;</span> (feels " + tempLabel(currTemp) + "), ");
 
             if (currWeather.get("current").get("weather").isArray()) {
@@ -64,13 +64,13 @@ public class OpenWeatherServlet extends HttpServlet
                 }
             }
 
-            response.getWriter().println("</p>Alerts:");
+            response.getWriter().println("</p><h3>Alerts:</h3>");
 
             if (currWeather.get("alerts").isArray()) {
                 for (final JsonNode objNode : currWeather.get("alerts")) {
                     String desc = objNode.get("description").asText();
                     desc = desc.replaceAll("\\n", "<br>");
-                    response.getWriter().println("<br><pre>" + desc+ "</pre></br>");
+                    response.getWriter().println("<pre>" + desc+ "</pre><br/>");
                 }
             }
 
