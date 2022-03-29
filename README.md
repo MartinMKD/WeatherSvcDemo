@@ -23,7 +23,7 @@ If you want to change the port it binds to or the OpenWeather API key used, edit
 **apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**<br/>
 *martin@macbookpro WeatherSvcDemo %*<br/>
 
-The current API key does work.
+The above API key does work.
 
 Once it is up and running, to test it, open your favorite browser and enter a URL (e.g.):
 
