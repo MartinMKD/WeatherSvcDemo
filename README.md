@@ -32,3 +32,5 @@ For Dallas, TX: http://localhost:8080/weathersvc?lat=32.74&lon=-96.85
 For Monett, MO: http://localhost:8080/weathersvc?lat=36.93&lon=-93.93
 
 For San Diego, CA: http://localhost:8080/weathersvc?lat=32.74&lon=-117.11
+
+Or any other coordinates you can glean from Google Maps or similar services, or your Android/iPhone.
