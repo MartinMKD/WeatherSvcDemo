@@ -30,5 +30,7 @@ Once it is up and running, to test it, open your favorite browser and enter a UR
 For Dallas, TX: http://localhost:8080/weathersvc?lat=32.74&lon=-96.85<br/>
 For Monett, MO: http://localhost:8080/weathersvc?lat=36.93&lon=-93.93<br/>
 For San Diego, CA: http://localhost:8080/weathersvc?lat=32.74&lon=-117.11<br/>
+For Yellowknife, Canada: http://localhost:8080/weathersvc?lat=62.48&lon=-114.43<br/>
+For Negril, Jamaica: http://localhost:8080/weathersvc?lat=18.27&lon=-78.35<br/>
 
-Or any other coordinates you can glean from Google Maps or similar services, or your Android/iPhone.
+Or any other coordinates you can glean thru Google Maps or similar services, or your Android/iPhone.
