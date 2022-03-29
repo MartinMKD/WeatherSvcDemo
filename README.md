@@ -19,8 +19,8 @@ If you want to change the port it binds to or the OpenWeather API key used, edit
 martin@macbookpro WeatherSvcDemo % pwd
 /Users/martin/IdeaProjects/WeatherSvcDemo
 martin@macbookpro WeatherSvcDemo % cat ./src/main/resources/WeatherService.properties
-httpPort=8080
-apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%
+**httpPort=8080**
+**apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**
 martin@macbookpro WeatherSvcDemo %
 
 The current API key does work.
