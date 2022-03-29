@@ -29,5 +29,5 @@ Once it is up and running, to test it, open your favorite browser and enter a UR
 
 For Dallas, TX: http://localhost:8080/weathersvc?lat=32.74&lon=-96.85
 
-For Monett, MO: http://localhost:8080/weathersvc?lat=36.93&long=-93.93
+For Monett, MO: http://localhost:8080/weathersvc?lat=36.93&lon=-93.93
 
