@@ -16,12 +16,12 @@ The last command will compile/build and run the embedded HTTP service/container 
 
 If you want to change the port it binds to or the OpenWeather API key used, edit WeatherService.properties here:
 
-martin@macbookpro WeatherSvcDemo % pwd
-/Users/martin/IdeaProjects/WeatherSvcDemo
-martin@macbookpro WeatherSvcDemo % cat ./src/main/resources/WeatherService.properties
-**httpPort=8080**
-**apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**
-martin@macbookpro WeatherSvcDemo %
+martin@macbookpro WeatherSvcDemo % pwd<br/>
+/Users/martin/IdeaProjects/WeatherSvcDemo<br/>
+martin@macbookpro WeatherSvcDemo % cat ./src/main/resources/WeatherService.properties<br/>
+**httpPort=8080**<br/>
+**apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**<br/>
+martin@macbookpro WeatherSvcDemo %<br/>
 
 The current API key does work.
 
