@@ -12,7 +12,7 @@ How to run Weather Serice demo:
 2) cd WeatherServiceDemo
 3) ./gradlew run
 
-The HTTP service will run bound to http://localhost:8080/weathersvc by default.
+The last command will compile/build and run the embedded HTTP service/container bound to http://localhost:8080/weathersvc by default.
 
 If you want to change the port it binds to or the OpenWeather API key used, edit WeatherService.properties here:
 
