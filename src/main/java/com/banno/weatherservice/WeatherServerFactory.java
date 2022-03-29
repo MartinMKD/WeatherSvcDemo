@@ -10,14 +10,16 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
 public class WeatherServerFactory {
-    final int port;
     final int idleTimeOut;
     final int outputBufferSize;
+    final int port;
+    final String apiKey;
 
-    public WeatherServerFactory() {
-        this.port = 8080;
+    public WeatherServerFactory(String port, String apiKey) {
         this.idleTimeOut = 5000;
         this.outputBufferSize = 32768;
+        this.port = Integer.parseInt(port);
+        this.apiKey = apiKey;
     }
 
     public Server createServer() {
@@ -39,7 +41,7 @@ public class WeatherServerFactory {
 
         context.addServlet(
                 new ServletHolder(
-                        new OpenWeatherServlet()), "/weathersvc");
+                        new OpenWeatherServlet(apiKey)), "/weathersvc");
 
         server.setHandler(new HandlerList(context, new DefaultHandler()));
 

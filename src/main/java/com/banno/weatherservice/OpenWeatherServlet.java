@@ -11,18 +11,14 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Iterator;
 
-public class OpenWeatherServlet extends HttpServlet
-{
-    final String apiKey;
+public class OpenWeatherServlet extends HttpServlet {
     final private OpenWeatherClient weatherCli;
 
-    public OpenWeatherServlet() {
-        this.apiKey = "5cf87e4d27fa3db53bbb23b354fdb5a9";
+    public OpenWeatherServlet(String apiKey) {
         this.weatherCli = new OpenWeatherClient((apiKey));
     }
 
-    private String tempLabel(double temp)
-    {
+    private String tempLabel(double temp) {
         if (temp < 0) {
             return "freezing";
         } else if (temp < 5.0) {
@@ -40,8 +36,7 @@ public class OpenWeatherServlet extends HttpServlet
 
     @Override
     protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response) throws IOException
-    {
+                         HttpServletResponse response) throws IOException {
         String lat = request.getParameter("lat");
         String lon = request.getParameter("lon");
 
@@ -75,7 +70,7 @@ public class OpenWeatherServlet extends HttpServlet
                 for (final JsonNode objNode : currWeather.get("alerts")) {
                     String desc = objNode.get("description").asText();
                     desc = desc.replaceAll("\\n", "<br>");
-                    response.getWriter().println("<pre>" + desc+ "</pre><br/>");
+                    response.getWriter().println("<pre>" + desc + "</pre><br/>");
                 }
             }
 
