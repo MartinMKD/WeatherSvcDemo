@@ -14,13 +14,13 @@ How to run Weather Serice demo:
 
 The last command will compile/build and run the embedded HTTP service/container bound to http://localhost:8080/weathersvc by default.
 
-If you want to change the port it binds to or the OpenWeather API key used, edit WeatherService.properties here:
+If you want to change the port it binds to or the OpenWeather API key used, edit WeatherService.properties w/vi or your favorite editor here:
 
 martin@macbookpro WeatherSvcDemo % pwd<br/>
 /Users/martin/IdeaProjects/WeatherSvcDemo<br/><br/>
 martin@macbookpro WeatherSvcDemo % cat ./src/main/resources/WeatherService.properties<br/>
 **httpPort=8080**<br/>
-**apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**<br/><br/>
+**apiKey=5cf87e4d27fa3db53bbb23b354fdb5a9%**<br/>
 martin@macbookpro WeatherSvcDemo %<br/>
 
 The current API key does work.
